@@ -14,12 +14,14 @@ class ListAverage:
         return total / len(self.lst)
 
     def compute_avg_faster(self):
-        return self.total_sum / len(self.lst)
+        average = self.total_sum / len(self.lst)
+        return float(f'{average:.1f}')
     
 average = ListAverage([1, 3, 5, 7, 9, 11, 13])
+print(average.compute_avg())
 print(average.compute_avg_faster())
-print(average.add(4))
-print(average.add(5))
-print(average)
+average.add(4)
+average.add(5)
+print(average.compute_avg_faster())
 print(type(average))
 
